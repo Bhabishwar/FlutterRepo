@@ -1,0 +1,74 @@
+void main() {
+  customers.forEach(print);
+}
+
+class Customer{
+  
+   int id;
+  String customerName;
+  int age;
+  String area;
+  List<Order> Orders;
+  
+  Customer(
+  {
+    this.id,
+    this.customerName,
+    this.age,
+    this.area,
+    this.Orders
+  });
+ 
+  
+  @override
+  
+  String toString()
+  {
+    return 'Customer{id: $id, customerName: $customerName, age: $age, area: $area, Orders: $Orders }';
+  }
+}
+ 
+ class Order{
+    
+    int orderId;
+    double orderTotal;
+    DateTime orderDate;
+    
+ 
+ Order(
+  {
+    this.orderId,
+    this.orderTotal,
+    this.orderDate
+   
+  });
+ 
+
+  @override
+  
+  String toString()
+  {
+    return 'Order{orderId: $orderId, orderTotal: $orderTotal, orderDate: $orderDate}';
+  }
+ }
+var customers  = <Customer>[
+  
+  Customer(
+  
+  id : 1, customerName: "Bhabishwar", age: 22, area: "Delhi",
+    Orders: <Order>[
+      
+      Order(
+      orderId :1,
+        orderTotal: 100,
+        orderDate: DateTime(2015, 2, 5)
+        
+        
+      )
+    ]
+    
+  )
+  
+  
+];
+
