@@ -67,7 +67,24 @@ var customers  = <Customer>[
       )
     ]
     
-  )
+  ),
+  
+  Customer(
+  
+  id : 1, customerName: "Xamdev", age: 22, area: "Delhi",
+    Orders: <Order>[
+      
+      Order(
+      orderId :1,
+        orderTotal: 100,
+        orderDate: DateTime(2015, 2, 5)
+        
+        
+      )
+    ]
+    
+  ),
+  
   
   
 ];
