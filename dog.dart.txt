@@ -1,0 +1,58 @@
+void main() {
+ var dog = new Dog("Oscar","Vote","Male",2, false);
+  dog.bark();
+  dog.eat(500);
+  int age = dog.getAge();
+  print (age);
+  
+  bool fav  = dog.isFaviritePet();
+  print(fav);
+}
+
+
+class Dog{
+  
+  String name;
+  String breed;
+  String gender;
+  int age;
+  bool isFavorite;
+  
+  Dog(
+  this.name,
+    this.breed,
+    this.gender,
+    this.age,
+    this.isFavorite
+  );
+  
+  void bark()
+  {
+    print("Dog is barking");
+  }
+  void eat(int foodWeight)
+  {
+   if(foodWeight>400){
+      print("Dog is eating food");
+   }
+    else{
+       bark();
+    }
+  }
+  
+  
+  int getAge()
+  {
+    return this.age;
+  }
+  bool isFaviritePet()
+  {
+    return this.isFavorite;
+  }
+  
+  @override
+  String toString()
+  {
+    return "ok";
+  }
+}
