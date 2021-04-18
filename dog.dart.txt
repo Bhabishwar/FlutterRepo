@@ -50,9 +50,24 @@ class Dog{
     return this.isFavorite;
   }
   
-  @override
-  String toString()
+  
+}
+
+class Cat{
+  
+ String name;
+ String breed;
+  String gender;
+  int age;
+  bool isFavorite;
+  
+  Cat(
+    
+    this.name,this.breed, this.gender, this.age, this.isFavorite
+  );
+  
+  void bark()
   {
-    return "ok";
+    print ("Cat is Barking");
   }
 }
