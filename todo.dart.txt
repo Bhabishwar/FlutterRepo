@@ -1,0 +1,80 @@
+void main() {
+  var list= TodoList();
+  list.addNewTodo('Watch Cubicles',false,DateTime(2021,03,27));
+    list.addNewTodo('Watch Narcos',false,DateTime(2021,03,25));
+      list.addNewTodo('Watch Money Heist',true,DateTime(2021,03,19));
+​
+​
+  list.printTodos();
+//   var completedList = list.getCompletedTodos();
+//   print(completedList);
+//   var notCompletedList = list.getUnCompletedTodos();
+//   print(notCompletedList);
+//   list.deleteTodo('Watch Cubicles');
+​
+​
+// list.printTodos();
+      list.updateTodoByName('Watch Cubicles');
+​
+    list.printTodos();
+​
+  
+  
+  
+  
+}
+class TodoList{
+  List<Todo> todos = [];
+  
+  void addNewTodo(String name, bool completed, DateTime date){
+    var newTodo =  Todo(name,completed,date);
+    todos.add(newTodo);
+    
+  }
+  
+  void printTodos(){
+    print(todos);
+  }
+  
+  List<Todo> getCompletedTodos() {
+    return todos.where((singleTodo) => singleTodo.completed==true).toList();
+  }
+   List<Todo> getUnCompletedTodos() {
+    return todos.where((singleTodo) => !singleTodo.completed).toList();
+  }
+  
+  void deleteTodo(String name){
+    todos.removeWhere((singleTodo) => singleTodo.name == name);
+  }
+  
+//   void updateTodo(Todo todo){
+//     todo.completed = !todo.completed;
+//   }
+  void updateTodoByName(String name){
+    Todo item = todos.firstWhere((singleTodo) => singleTodo.name == name);
+    item.completed = true;
+    item.name = "ABS";
+//     int itemIndex= todos.indexWhere((singleTodo) => singleTodo.name == name);
+//     todos[itemIndex].completed = true;
+    
+  }
+}
+​
+class Todo{
+  String name;
+  bool completed;
+  DateTime date;
+  
+  Todo(this.name, this.completed, this.date);
+  
+  @override
+  String toString() {
+    String val = completed ? "Completed": "Not Completed";
+    return "$name is currently $val and it's expected completion date is $date";
+  }
+}
+Collapse
+
+
+
+
